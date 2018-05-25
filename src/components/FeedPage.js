@@ -9,16 +9,16 @@ class FeedPage extends Component {
             this.props.feedQuery.refetch()
         }
     }
-    
+
     componentDidMount() {
         this.props.subscribeToNewFeed()
     }
-    
+
     onLikeClick = (id) => {
         console.log("likePost", id);
         this.props.likePost({variables : {id}})
     }
-    
+
     render() {
         if (this.props.feedQuery.loading) {
             return (
@@ -27,7 +27,7 @@ class FeedPage extends Component {
                 </div>
             )
         }
-        
+
         return (
             <Fragment>
                 <h1>Feed</h1>
@@ -50,7 +50,7 @@ const FEED_QUERY = gql`
     query FeedQuery {
         feed {
             id
-            text
+            
             title
             likes{
                 name
@@ -66,7 +66,7 @@ const FEED_SUBSCRIPTION = gql`
         feedSubscription {
             node {
                 id
-                text
+                
                 title
                 likes{
                     name
