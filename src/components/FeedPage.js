@@ -29,8 +29,7 @@ class FeedPage extends Component {
         }
 
         return (
-            <Fragment>
-                <h1>Feed</h1>
+            <div className=" is-centered">
                 {this.props.feedQuery.feed &&
                 this.props.feedQuery.feed.map(post => (
                     <Post
@@ -41,7 +40,7 @@ class FeedPage extends Component {
                     />
                 ))}
                 {this.props.children}
-            </Fragment>
+            </div>
         )
     }
 }

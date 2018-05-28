@@ -86,12 +86,9 @@ class RootContainer extends Component {
 
   renderNavBar() {
     return (
-      <nav className="pa3 pa4-ns">
-        <Link className="link dim black b f6 f5-ns dib mr3" to="/" title="Feed">
-          Blog
-        </Link>
+      <nav className="level">
         <NavLink
-          className="link dim f6 f5-ns dib mr3 black"
+          className="level-item centered"
           activeClassName="gray"
           exact={true}
           to="/"
@@ -108,14 +105,14 @@ class RootContainer extends Component {
                 })
               window.location.href = '/'
             }}
-            className="f6 link dim br1 ba ph3 pv2 fr mb2 dib black"
+            className="level-right button is-link"
           >
             Logout
           </div>
         ) : (
           <Link
             to="/login"
-            className="f6 link dim br1 ba ph3 pv2 fr mb2 dib black"
+            className="level-right button is-link"
           >
             Login
           </Link>
@@ -126,7 +123,7 @@ class RootContainer extends Component {
           this.state.token && (
             <Link
               to="/create"
-              className="f6 link dim br1 ba ph3 pv2 fr mb2 dib black"
+              className="level-right button is-link"
             >
               + Create Post
             </Link>
